@@ -158,7 +158,7 @@ class _LoginPageState extends State<LoginPage> {
                         color: Colors.black,
                       ),
                       children: <TextSpan>[
-                        TextSpan(text: "Don't have an Account? "),
+                        TextSpan(text: "Don't Have An Account? "),
                         TextSpan(
                             text: 'Sign Up',
                             style: TextStyle(
