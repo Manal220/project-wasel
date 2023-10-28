@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "330557349843",
+    "project_id": "wasel-a2e62",
+    "storage_bucket": "wasel-a2e62.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:330557349843:android:95da6c2d006faab9519926",
+        "android_client_info": {
+          "package_name": "com.wasel1.wasel1"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCWSO2WHjZhLS33wD_MT9BwSxe1ekeAe4Q"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
