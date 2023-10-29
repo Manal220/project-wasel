@@ -48,7 +48,7 @@ class _EditBookPageState extends State<EditBookPage> {
               child: Text(
                 'Edit Book\nDescription',
                 style: TextStyle(
-                  fontSize: 35,
+                  fontSize: 40,
                   fontWeight: FontWeight.bold,
                   color: Colors.purple[800],
                 ),

@@ -3,8 +3,10 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:wasel1/AddBookPage.dart';
-import 'EditBookPage.dart';
+import 'AllBooksPage.dart';
+import 'ChatGroupPage.dart';
 import 'ProfilePage.dart';
+import 'ShoppingCartPage.dart';
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
 
@@ -16,9 +18,15 @@ class _HomePageState extends State<HomePage> {
   int _currentIndex = 0;
   final List<Widget> _pages = [
     HomePage(),
-    HomePage(),
-    HomePage(),
-    HomePage(),
+    ChatGroupPage(),
+    AllBooksPage(),
+    ShoppingCartPage(
+      bookName: '',
+      bookType: '',
+      writerName: '',
+      bookDescription: '',
+      imagePath: '',
+    ),
     ProfilePage(),
   ];
   final user = FirebaseAuth.instance.currentUser!;
@@ -166,7 +174,10 @@ class _HomePageState extends State<HomePage> {
                 height: 55,
                 child: ElevatedButton(
                   onPressed: () {
-                    // الكود الذي تريد تنفيذه عند النقر على الزر
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => AllBooksPage()), // استبدل بالصفحة التي تريد الانتقال إليها
+                    );
                   },
                   style: ElevatedButton.styleFrom(
                       primary: Colors.black,

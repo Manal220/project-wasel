@@ -3,11 +3,13 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:wasel1/ShoppingCartPage.dart';
 import 'MyPage.dart';
 import 'HomePage.dart';
+import 'ChatGroupPage.dart';
 import 'EditBookPage.dart';
 import 'dart:async';
-
+import 'AllBooksPage.dart';
 class ProfilePage extends StatefulWidget {
   final String? notification;
 
@@ -23,9 +25,15 @@ class _ProfilePageState extends State<ProfilePage> {
   int _currentIndex = 4;
   final List<Widget> _pages = [
     HomePage(),
-    HomePage(),
-    HomePage(),
-    HomePage(),
+    ChatGroupPage(),
+    AllBooksPage(),
+    ShoppingCartPage(
+      bookName: '',
+      bookType: '',
+      writerName: '',
+      bookDescription: '',
+      imagePath: '',
+    ),
     ProfilePage(),
   ];
   final user = FirebaseAuth.instance.currentUser!;
@@ -77,8 +85,9 @@ class _ProfilePageState extends State<ProfilePage> {
           child: Row(
             children: [
               Container(
-                width: 320,
+                width: 350,
                 child: Align(
+                  alignment: Alignment.topCenter,
                   child: Text(
                     'Profile',
                     style: TextStyle(
@@ -92,6 +101,7 @@ class _ProfilePageState extends State<ProfilePage> {
               ),
               Container(
                 child: Align(
+                  alignment: Alignment.topCenter,
                   child: GestureDetector(
                     onTap: () {
                       Navigator.push(
@@ -137,7 +147,7 @@ class _ProfilePageState extends State<ProfilePage> {
                         _notification!,
                         style: TextStyle(
                           color: Colors.purple[700],
-                          fontSize: 20,
+                          fontSize: 25,
                           fontWeight: FontWeight.bold,
                         ),
                         textAlign: TextAlign.center,
@@ -152,7 +162,7 @@ class _ProfilePageState extends State<ProfilePage> {
                   radius: 55,
                   backgroundColor: Colors.purple, // أو أي لون آخر تريده للإطار
                   child: CircleAvatar(
-                    radius: 48,
+                    radius: 48, 
                     backgroundImage: AssetImage('assets/wasel.jpeg'), // مسار الصورة الخاصة بك
                   ),
                 ),
@@ -173,12 +183,12 @@ class _ProfilePageState extends State<ProfilePage> {
                           );
                         } else if (snapshot.hasError) {
                           return Text(
-                            'Error: ${snapshot.error}',
+                            'Error: ${snapshot.error}', 
                             style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
                           );
                         } else {
                           return Text(
-                            snapshot.data ?? 'No Data',
+                            snapshot.data ?? 'No Data', 
                             style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
                           );
                         }
@@ -191,9 +201,9 @@ class _ProfilePageState extends State<ProfilePage> {
                     width: 140,
                     child: ElevatedButton(
                       onPressed: () {
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(builder: (context) => EditProfilePage())
+                         Navigator.push(
+                          context, 
+                          MaterialPageRoute(builder: (context) => EditProfilePage())
                         );
                       },
                       style: ElevatedButton.styleFrom(
@@ -352,6 +362,8 @@ class _ProfilePageState extends State<ProfilePage> {
     );
   }
 }
+
+
 
 class EditProfilePage extends StatefulWidget {
   const EditProfilePage({super.key});
@@ -556,6 +568,3 @@ class _EditProfileState extends State<EditProfilePage> {
     );
   }
 }
-
-
-

@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:wasel1/AboutPage.dart';
 
 import 'LoginPage.dart';
 
@@ -112,10 +111,7 @@ class _MyPageState extends State<MyPage> {
                 width: 300,
                 child: ElevatedButton(
                   onPressed: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) => AboutPage()), // استبدل بالصفحة التي تريد الانتقال إليها
-                    );
+                    // الكود الذي تريد تنفيذه عند النقر على الزر
                   },
                   style: ElevatedButton.styleFrom(
                     primary: Colors.grey[400],

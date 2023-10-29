@@ -2,6 +2,7 @@
 import 'package:wasel1/HomePage.dart';
 
 import 'EditBookPage.dart';
+import 'ChatGroupPage.dart';
 // ignore_for_file: prefer_const_constructors
 
 import 'package:firebase_core/firebase_core.dart';
@@ -21,7 +22,7 @@ class MyLoginApp extends StatelessWidget {
 
       routes: {
         '/editBook': (context) => HomePage(),
-        '/shoppingCart': (context) => HomePage(),
+        '/shoppingCart': (context) => ChatGroupPage(),
         '/home':(context) => HomePage(),
       },
 
